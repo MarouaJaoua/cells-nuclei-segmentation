@@ -1,0 +1,133 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# DotEnv configuration
+.env
+
+# Database
+*.db
+*.rdb
+
+# Pycharm
+.idea
+
+# VS Code
+.vscode/
+
+# Spyder
+.spyproject/
+
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+
+# exclude data from source control by default
+/data/
+
+# Mac OS-specific storage files
+.DS_Store
+
+# vim
+*.swp
+*.swo
+
+# Mypy cache
+.mypy_cache/
+/logs/090_cell_cell_unet_64_adam_8_3_0.01_512/
+/logs/090_nuclei_nuclei_unet_64_adam_8_3_0.01_512/
+/logs/190_cell_cell_unet_64_adam_8_3_0.0001_512/
+/logs/190_nuclei_nuclei_unet_64_adam_8_3_0.0001_512/
+/logs/290_cell_cell_unet_64_adam_8_3_1e-05_512/
+/logs/390_cell_cell_unet_64_adam_8_3_0.0001_256/
+/logs/390_nuclei_nuclei_unet_64_adam_8_3_0.0001_256/
+/logs/290_nuclei_nuclei_unet_64_adam_8_3_1e-05_512/
+/logs/490_cell_cell_unet_64_adam_8_3_1e-05_256/
+/logs/490_nuclei_nuclei_unet_64_adam_8_3_1e-05_256/
+/logs/590_nuclei_nuclei_unet_64_adam_4_3_0.0001_512/
+/logs/590_cell_cell_unet_64_adam_4_3_0.0001_512/
+/logs/690_cell_cell_unet_64_adam_4_3_0.0001_256/
+/logs/690_nuclei_nuclei_unet_64_adam_4_3_0.0001_256/
+/logs/800_cell_32_cell_unet_32_adam_16_3_0.0001_512/
+/logs/810_cell_16_cell_unet_16_adam_8_3_0.0001_512/
+/logs/810_cell_32_cell_unet_32_adam_8_3_0.0001_512/
+/logs/810_nuclei_16_nuclei_unet_16_adam_8_3_0.0001_512/
+/logs/810_nuclei_32_nuclei_unet_32_adam_8_3_0.0001_512/
+/logs/820_cell_32_cell_unet_32_adam_4_3_0.0001_512/
+/logs/820_nuclei_32_nuclei_unet_32_adam_4_3_0.0001_512/
+/logs/80000_nuclei_32_nuclei_unet_32_adam_16_3_0.0001_512/
+/output/820_nuclei_32/
+/output/690_nuclei/
+/output/590_cell/
+/output/290_cell/
+/output/800_nuclei_32/
+/output/810_cell_32/
+/output/390_cell/
+/output/690_cell/
+/output/390_nuclei/
+/output/820_cell_32/
+/output/810_nuclei_32/
+/output/590_nuclei/
+/output/290_nuclei/
+/output/810_cell_16/
+/output/490_nuclei/
+/output/090_nuclei/
+/output/190_cell/
+/output/090_cell/
+/output/190_nuclei/
+/output/490_cell/
+/output/8000_nuclei_32/
+/output/80000_nuclei_32/

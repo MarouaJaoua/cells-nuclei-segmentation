@@ -3,6 +3,7 @@ Cell and Nuclei Segmentation
 
 The purpose of this project is to predict the masks of the nuclei and the cells for a given dataset.
 
+
 ## Prerequisites
 The [requirements.txt](requirements.txt) file includes the project dependencies.
 
@@ -142,6 +143,9 @@ The report in the directory [reports](reports) summarizes the results.
 The csv file [output/results.csv](output/results.csv) summarizes 22 experiments. 
 The notebooks in the directory [notebooks](notebooks) were used to generate
 the plots documented in the report. 
+
+![](reports/example_1_hpa_cell.png)
+![](reports/example_1_hpa_nuclei.png)
 
 ## Contributors
 [![Maroua Jaoua](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-8109-9644) 

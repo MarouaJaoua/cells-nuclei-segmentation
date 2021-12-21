@@ -165,8 +165,43 @@ generate_cells_mask: requirements setup
                                               --experiment_name "800_cell_32" \
                                               --target_type "cell" \
                                               --image_size 512 \
-                                              --contrast 15
+                                              --contrast 0
 
+generate_cells_mask_without_contrast: requirements setup
+	$(PYTHON_INTERPRETER) source/evaluate/generate_masks.py \
+											  --num_kernel 16 \
+                                              --kernel_size 3 \
+                                              --lr  0.0001 \
+                                              --epoch 50 \
+                                              --dataset "hpa" \
+                                              --device "cpu" \
+                                              --optimizer "adam" \
+                                              --model "unet" \
+                                              --batch_size "32" \
+                                              --gpu_ids "2" \
+                                              --num_workers "16" \
+                                              --experiment_name "800_cell_32" \
+                                              --target_type "cell" \
+                                              --image_size 512 \
+                                              --contrast 0
+
+generate_cells_mask_with_contrast: requirements setup
+	$(PYTHON_INTERPRETER) source/evaluate/generate_masks.py \
+											  --num_kernel 16 \
+                                              --kernel_size 3 \
+                                              --lr  0.0001 \
+                                              --epoch 50 \
+                                              --dataset "hpa" \
+                                              --device "cpu" \
+                                              --optimizer "adam" \
+                                              --model "unet" \
+                                              --batch_size "32" \
+                                              --gpu_ids "2" \
+                                              --num_workers "16" \
+                                              --experiment_name "800_cell_32" \
+                                              --target_type "cell" \
+                                              --image_size 512 \
+                                              --contrast 15
 
 test: requirements setup
 	$(PYTHON_INTERPRETER) -m pytest

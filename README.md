@@ -132,7 +132,8 @@ The cells masks can be found in [data/generate/masks/cell](data/generate/masks/c
 Examples of generated masks can be found in the directories [data/generate/masks/nuclei](data/generate/masks/nuclei)
 and [data/generate/masks/cell](data/generate/masks/cell)
 
-To generate nuclei masks and cells masks based on the train models, run the following command
+It is possible to change the contrast of the cells images before generating the masks.
+To generate nuclei masks and cells masks based on the train models, run the following commands
 ```
 make generate_nuclei_mask
 make generate_cells_mask

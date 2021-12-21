@@ -164,7 +164,8 @@ generate_cells_mask: requirements setup
                                               --num_workers "16" \
                                               --experiment_name "800_cell_32" \
                                               --target_type "cell" \
-                                              --image_size 512
+                                              --image_size 512 \
+                                              --contrast 15
 
 
 test: requirements setup

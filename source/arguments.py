@@ -67,6 +67,9 @@ def get_arguments():
                         type=str,
                         default="nuclei",
                         help="training nulcei or cells model")
+    parser.add_argument("--contrast",
+                        type=int,
+                        default=20)
     parser.add_argument("--generate_folder",
                         type=str,
                         default="data/generate/",

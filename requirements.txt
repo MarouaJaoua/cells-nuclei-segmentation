@@ -5,7 +5,7 @@ pip
 python-dotenv
 wheel
 -e .
-torch~=1.10.0+cpu
+torch
 source~=0.1.0
 numpy~=1.21.4
 opencv-python~=4.5.4.58

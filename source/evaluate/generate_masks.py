@@ -76,20 +76,36 @@ def main(m_args):
 
             originals = []
             segments = []
+            count = 0
 
             for i, x in enumerate(image):
+                # TODO: Clean this up!
                 if ext in [".tif", ".nd2"]:
+                    # This is not important, just to visualize original image
+                    x_ = cv2.convertScaleAbs(x, alpha=0.05, beta=0)
+                    x_ = cv2.resize(x_, (m_args.image_size, m_args.image_size))
+                    originals.append(x_)
+
+                # This is tailored to the dataset that we are interested in
+                # You can delete it or change it.
+                if args.target_type == "nuclei":
                     # This is because .tif and .nd2 provided images need
                     # to be converted to 8 bit
                     x = cv2.convertScaleAbs(x, alpha=0.05, beta=0)
                 else:
                     x = cv2.normalize(x, None, alpha=0, beta=255,
                                       norm_type=cv2.NORM_MINMAX)
+                    x = apply_brightness_contrast(x, brightness=0,
+                                                  contrast=m_args.contrast)
+
                 x = cv2.resize(x, (m_args.image_size, m_args.image_size))
-                originals.append(x)
+
+                if ext not in [".tif", ".nd2"]:
+                    # This is not important, just to visualize original image
+                    originals.append(x)
                 orig_p = os.path.join(m_args.generate_folder, "original",
                                       file_name + "_" + str(i) + ".png")
-                cv2.imwrite(orig_p, x)
+                cv2.imwrite(orig_p, originals[len(originals)-1])
                 x = cv2.cvtColor(x, cv2.COLOR_GRAY2RGB)
                 x = x.astype(np.float32)
                 x = x.T
@@ -112,6 +128,9 @@ def main(m_args):
                                       m_args.target_type,
                                       file_name + "_" + str(i) + ".png")
                 cv2.imwrite(mask_p, seg)
+                count += 1
+                if count >= 50:
+                    break
 
             """orig_p = os.path.join(args.generate_folder, "original",
                                   file_name + "_org.tif")
@@ -120,6 +139,30 @@ def main(m_args):
                                   args.target_type, file_name + "_mask.tif")
             tiff.imsave(mask_p, segments)"""
 
+
+def apply_brightness_contrast(input_img, brightness=0, contrast=0):
+    if brightness != 0:
+        if brightness > 0:
+            shadow = brightness
+            highlight = 255
+        else:
+            shadow = 0
+            highlight = 255 + brightness
+        alpha_b = (highlight - shadow) / 255
+        gamma_b = shadow
+
+        buf = cv2.addWeighted(input_img, alpha_b, input_img, 0, gamma_b)
+    else:
+        buf = input_img.copy()
+
+    if contrast != 0:
+        f = 131 * (contrast + 127) / (127 * (131 - contrast))
+        alpha_c = f
+        gamma_c = 127 * (1 - f)
+
+        buf = cv2.addWeighted(buf, alpha_c, buf, 0, gamma_c)
+
+    return buf
 
 if __name__ == "__main__":
     args = arguments.get_arguments()

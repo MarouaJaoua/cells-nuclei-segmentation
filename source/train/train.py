@@ -65,7 +65,7 @@ def main(m_args):
     imgs, _, _ = dataiter.next()
     imgs = imgs.float().to(device)
     print(imgs.shape)
-    logger_tb.update_graph(model, imgs)
+    # logger_tb.update_graph(model, imgs)
 
     # Optimizer
     parameters = model.parameters()
